@@ -10,22 +10,32 @@ public class OOP {
         System.out.println(car.getModel());
         car.describeCar();
 
-        ClassAccount bobsAccount = new ClassAccount();
+//        ClassAccount bobsAccount = new ClassAccount();
+//
+//        bobsAccount.setNumber("12345");
+//        bobsAccount.setBalance(1000.00);
+//        bobsAccount.setCustomerName("Bob Brown");
+//        bobsAccount.setCustomerEmail("myemail@bob.com");
+//        bobsAccount.setCustomerPhone("(087) 123-4567");
+//
+//        bobsAccount.withdrawFunds(100.0);
+//        bobsAccount.depositFunds(250);
+//        bobsAccount.withdrawFunds(50);
+//        bobsAccount.withdrawFunds(200);
+//        bobsAccount.depositFunds(100);
+//        bobsAccount.withdrawFunds(45.55);
+//        bobsAccount.withdrawFunds(54.46);
+//        bobsAccount.withdrawFunds(54.45);
 
-        bobsAccount.setNumber("12345");
-        bobsAccount.setBalance(1000.00);
-        bobsAccount.setCustomerName("Bob Brown");
-        bobsAccount.setCustomerEmail("myemail@bob.com");
-        bobsAccount.setCustomerPhone("(087) 123-4567");
+        ClassAccount bobsAccount = new ClassAccount(
+                "12345",1000.00,"Bob Brown","email@email.com","08123456789"
+        );
+        System.out.println(bobsAccount.getBalance());
 
-        bobsAccount.withdrawFunds(100.0);
-        bobsAccount.depositFunds(250);
-        bobsAccount.withdrawFunds(50);
-        bobsAccount.withdrawFunds(200);
-        bobsAccount.depositFunds(100);
-        bobsAccount.withdrawFunds(45.55);
-        bobsAccount.withdrawFunds(54.46);
-        bobsAccount.withdrawFunds(54.45);
+        ClassAccount timsAccount = new ClassAccount(
+                "Bob Brown","email@email.com","08123456789"
+        );
+        System.out.println(timsAccount.getBalance());
     }
 }
 
@@ -73,4 +83,11 @@ encapsulation in oop usually has 2 meanings
 -> the practice of hiding fields, and some methods, from public access
 
 non static -> need to initiate the class first
+
+constructor
+-> creation of an object (instance of a class), it has the same name as the class itself, and it doesnt return any values, access modifier should be specify to controll who should be able to create new instances of the class
+-> if there is no constructor declarations, default constructor is implicitly declared
+-> no-args constructor, if there is no parameter set
+-> constructor overloading is declaring multiple constructors, with different formal parameters, the number of parameters can be different between constructors, if have a same number, their type or order types must be differed
+-> this() constructor chaining (when one constructor explicitly calls another overloaded constructor, must be the first executable statement
 */
