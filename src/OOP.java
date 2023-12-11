@@ -95,10 +95,12 @@ encapsulation in oop usually has 2 meanings
 non static -> need to initiate the class first
 
 constructor
--> creation of an object (instance of a class), it has the same name as the class itself, and it doesnt return any values, access modifier should be specify to controll who should be able to create new instances of the class
+-> creation of an object (instance of a class),
+-> it has the same name as the class itself, and it doesnt return any values, access modifier should be specify to controll who should be able to create new instances of the class
 -> if there is no constructor declarations, default constructor is implicitly declared
 -> no-args constructor, if there is no parameter set
--> constructor overloading is declaring multiple constructors, with different formal parameters, the number of parameters can be different between constructors, if have a same number, their type or order types must be differed
+-> constructor overloading is declaring multiple constructors, with different formal parameters
+-> the number of parameters can be different between constructors, if have a same number, their type or order types must be differed
 -> this() constructor chaining (when one constructor explicitly calls another overloaded constructor, must be the first executable statement
 
 reference, object, instance, class
@@ -107,9 +109,23 @@ Object : Physical Manifestation
 Instance : each object created from class
 Reference : Address of Object
 
-Object: real world objects shares 2 main characteristics, state and behavior. Human have state (name, age) and behavior (running, sleeping). Car have state (current speed, current gear) and behavior (applying brake, changing gear). Software objects are conceptually similar to real-world objects: they too consist of state and related behavior. An object stores its state in fields and exposes its behavior through methods.
-Class: is a “template” / “blueprint” that is used to create objects. Basically, a class will consists of field, static field, method, static method and constructor. Field is used to hold the state of the class (eg: name of Student object). Method is used to represent the behavior of the class (eg: how a Student object going to stand-up). Constructor is used to create a new Instance of the Class.
-Instance: An instance is a unique copy of a Class that representing an Object. When a new instance of a class is created, the JVM will allocate a room of memory for that class instance.
+Object
+-> real world objects shares 2 main characteristics, state and behavior
+-> Human have state (name, age) and behavior (running, sleeping)
+-> Car have state (current speed, current gear) and behavior (applying brake, changing gear)
+-> Software objects are conceptually similar to real-world objects: they too consist of state and related behavior.
+-> An object stores its state in fields and exposes its behavior through methods.
+
+Class
+-> is a “template” / “blueprint” that is used to create objects
+-> Basically, a class will consists of field, static field, method, static method and constructor
+-> Field is used to hold the state of the class (eg: name of Student object)
+-> Method is used to represent the behavior of the class (eg: how a Student object going to stand-up)
+-> Constructor is used to create a new Instance of the Class.
+
+Instance
+-> An instance is a unique copy of a Class that representing an Object
+-> When a new instance of a class is created, the JVM will allocate a room of memory for that class instance.
 
 public class Person {
     private int id;
@@ -154,7 +170,7 @@ public class Person {
 }
 For case 1, there are two instances of the class Person, but both instances represent the same object.
 For case 2, there are two instances of the class Person, but each instance represent a different object.
-So class, object and instance are different things. Object and instance are not synonyms as is suggested in the answer selected as right answer.
+So class, object and instance are different things. Object and instance are not synonyms.
 
 Class is Data Type,You use this type to create object.
 Instance is Logical but object is Physical means occupies some memory.
@@ -184,7 +200,11 @@ new House("red"); house object get created in memory
 House myHouse = new House("beige); house object get created in memory, and it's location (reference) is assigned to redHouse
 House redHouse = new House("red"); different object altogether, from the red house that created on line one, this statement is creating another house object in memory, which has no relationship to the one we created on the first line
 
-static variable -> every instance of the class shares the same static variable, so if changes are made to that variable. all other instances of that class will be affected, it is considered best practice to use the Class name, and not a reference variable to access a static variable, an instance isnt requred to exist, to access the value of a static variable (storing counters, generating unique ids, storing constant value like pi, creating, controlling to a shared resources)
+static variable
+-> every instance of the class shares the same static variable, so if changes are made to that variable, all other instances of that class will be affected,
+-> it is considered best practice to use the Class name, and not a reference variable to access a static variable,
+-> an instance isnt required to exist, to access the value of a static variable
+-> storing counters, generating unique ids, storing constant value like pi, creating, controlling to a shared resources
 class Dog{
     private static String name;
 
@@ -205,7 +225,10 @@ public class Main{
     }
 }
 
-instance variable -> instance variable has its own, every instance can have a different value, instance variable represent the state, of a specific instance of a class
+instance variable
+-> instance variable has its own
+-> every instance can have a different value
+-> instance variable represent the state, of a specific instance of a class
 class Dog{
     private String name;
 
@@ -257,4 +280,13 @@ class Dog{
         }
     }
 }
+
+POJO (plain old java object)
+-> a class that generally only has instance fields
+-> it's used house data, pass data, between functional classes,it usually has few, if any methods other than getter and setter
+-> many database fw use pojo's to read data from, or to write data to databases files or stream
+JavaBean / DTO (Data Transfer Object)
+-> pojo with extra rules applied
+-> a pojo is sometimes called an entity, because it mirrors database entities
+-> it's a description of an object, that can be modeled as just data
 */

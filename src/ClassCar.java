@@ -73,7 +73,10 @@ setter -> set value of private field
 
 non static field -> method non static
 
-this -> refer to instance that was created when the object instantiated, can be used to describe itself (access field on class), keyword this is optional (required if a similar local variable name exist)
+this
+-> refer to instance that was created when the object instantiated
+-> can be used to describe itself (access field on class)
+-> keyword this is optional (required if a similar local variable name exist)
 
 Car car; -> compiler error
 Car car = null; runtime error, null pointer
