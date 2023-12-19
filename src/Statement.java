@@ -51,6 +51,15 @@ public class Statement {
             System.out.println(i);
             i++;
         }while (i<5);
+
+        int[] array = {1,2,3,4,5};
+        for (int j=0; j<array.length; j++){
+            System.out.println(array[j]);
+        }
+
+        for (int element: array){
+            System.out.println(element);
+        }
     }
     public static String whoAmI(String name){
 //        traditional switch
