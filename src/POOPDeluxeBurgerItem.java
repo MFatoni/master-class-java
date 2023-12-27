@@ -1,17 +1,17 @@
-public class DeluxeBurgerPO extends BurgerPO {
+public class POOPDeluxeBurgerItem extends POOPBurgerItem {
 
-    ItemPO deluxe1;
-    ItemPO deluxe2;
+    POOPItem deluxe1;
+    POOPItem deluxe2;
 
-    public DeluxeBurgerPO(String name, double price) {
+    public POOPDeluxeBurgerItem(String name, double price) {
         super(name, price);
     }
 
     public void addToppings(String extra1, String extra2, String extra3,
                             String extra4, String extra5) {
         super.addToppings(extra1, extra2, extra3);
-        deluxe1 = new ItemPO("TOPPING", extra4, 0);
-        deluxe2 = new ItemPO("TOPPING", extra5, 0);
+        deluxe1 = new POOPItem("TOPPING", extra4, 0);
+        deluxe2 = new POOPItem("TOPPING", extra5, 0);
     }
 
     @Override

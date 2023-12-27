@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class DataArray {
+public class TypeArray {
     public static void main(String[] args) {
         int[] newArray = {1,2,3,4,5}; // [I@8efb846 -> I mean primitive integer array, followed by hexadecimal representation of the hash code, it doesnt override object string method
         System.out.println(newArray);
@@ -132,6 +132,7 @@ public class DataArray {
 
 /*
 array
+-> mutable but we could not resize it
 -> a special class in java, it inherits from java.lang.Object
 -> a data structure that allows us to store multiple values, of the same type, in a single variable
 -> the default values of numeric array elements are set to zero

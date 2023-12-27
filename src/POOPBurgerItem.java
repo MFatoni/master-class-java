@@ -1,10 +1,10 @@
-public class BurgerPO extends ItemPO {
+public class POOPBurgerItem extends POOPItem {
 
-    private ItemPO extra1;
-    private ItemPO extra2;
-    private ItemPO extra3;
+    private POOPItem extra1;
+    private POOPItem extra2;
+    private POOPItem extra3;
 
-    public BurgerPO(String name, double price) {
+    public POOPBurgerItem(String name, double price) {
         super("Burger", name, price);
     }
 
@@ -32,11 +32,11 @@ public class BurgerPO extends ItemPO {
 
     public void addToppings(String extra1, String extra2, String extra3) {
 
-        this.extra1 = new ItemPO("TOPPING", extra1,
+        this.extra1 = new POOPItem("TOPPING", extra1,
                 getExtraPrice(extra1));
-        this.extra2 = new ItemPO("TOPPING", extra2,
+        this.extra2 = new POOPItem("TOPPING", extra2,
                 getExtraPrice(extra2));
-        this.extra3 = new ItemPO("TOPPING", extra3,
+        this.extra3 = new POOPItem("TOPPING", extra3,
                 getExtraPrice(extra3));
     }
 

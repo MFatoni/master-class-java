@@ -1,11 +1,11 @@
-public class ItemPO {
+public class POOPItem {
 
     private String type;
     private String name;
     private double price;
     private String size = "MEDIUM";
 
-    public ItemPO(String type, String name, double price) {
+    public POOPItem(String type, String name, double price) {
         this.type = type.toUpperCase();
         this.name = name.toUpperCase();
         this.price = price;

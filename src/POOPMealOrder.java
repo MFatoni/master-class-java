@@ -1,27 +1,27 @@
-public class MealOrderPO {
+public class POOPMealOrder {
 
-    private BurgerPO burger;
-    private ItemPO drink;
-    private ItemPO side;
+    private POOPBurgerItem burger;
+    private POOPItem drink;
+    private POOPItem side;
 
-    public MealOrderPO() {
+    public POOPMealOrder() {
         this("regular", "coke", "fries");
     }
 
-    public MealOrderPO(String burgerType, String drinkType, String sideType) {
+    public POOPMealOrder(String burgerType, String drinkType, String sideType) {
 
         if (burgerType.equalsIgnoreCase("deluxe")) {
-            this.burger = new DeluxeBurgerPO(burgerType, 8.5);
+            this.burger = new POOPDeluxeBurgerItem(burgerType, 8.5);
         } else {
-            this.burger = new BurgerPO(burgerType, 4.0);
+            this.burger = new POOPBurgerItem(burgerType, 4.0);
         }
-        this.drink = new ItemPO("drink", drinkType, 1.00);
-        this.side = new ItemPO("side", sideType, 1.50);
+        this.drink = new POOPItem("drink", drinkType, 1.00);
+        this.side = new POOPItem("side", sideType, 1.50);
     }
 
     public double getTotalPrice() {
 
-        if (burger instanceof DeluxeBurgerPO) {
+        if (burger instanceof POOPDeluxeBurgerItem) {
             return burger.getAdjustedPrice();
         }
 
@@ -32,15 +32,15 @@ public class MealOrderPO {
     public void printItemizedList() {
 
         burger.printItem();
-        if (burger instanceof DeluxeBurgerPO) {
-            ItemPO.printItem(drink.getName(), 0);
-            ItemPO.printItem(side.getName(), 0);
+        if (burger instanceof POOPDeluxeBurgerItem) {
+            POOPItem.printItem(drink.getName(), 0);
+            POOPItem.printItem(side.getName(), 0);
         } else {
             drink.printItem();
             side.printItem();
         }
         System.out.println("-".repeat(30));
-        ItemPO.printItem("TOTAL PRICE", getTotalPrice());
+        POOPItem.printItem("TOTAL PRICE", getTotalPrice());
     }
 
     public void addBurgerToppings(String extra1, String extra2, String extra3) {
@@ -49,7 +49,7 @@ public class MealOrderPO {
 
     public void addBurgerToppings(String extra1, String extra2, String extra3,
                                   String extra4, String extra5) {
-        if (burger instanceof DeluxeBurgerPO db) {
+        if (burger instanceof POOPDeluxeBurgerItem db) {
             db.addToppings(extra1, extra2, extra3, extra4, extra5);
         } else {
             burger.addToppings(extra1, extra2, extra3);

@@ -23,7 +23,7 @@ public class PrincipleOOP {
 //        secondMeal.setDrinkSize("SMALL");
 //        secondMeal.printItemizedList();
 
-        MealOrderPO deluxeMeal = new MealOrderPO("deluxe", "7-up",
+        POOPMealOrder deluxeMeal = new POOPMealOrder("deluxe", "7-up",
                 "chili");
         deluxeMeal.addBurgerToppings("AVOCADO", "BACON", "LETTUCE",
                 "CHEESE", "MAYO");

@@ -1,4 +1,4 @@
-public class StringOperation {
+public class TypeString {
     public static void main(String[] args) {
         String bulletIt = "Print a Bulleted List:\n"+
                 "\t\u2022 First Point\n" +
