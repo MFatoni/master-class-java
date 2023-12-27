@@ -227,4 +227,6 @@ iterator is similar to for and enhanced for loop
 
 interator is forward only, and only support the remove method
 listIterator can be used to go both forwards and backwards, and in addition to the remove method, it also supports the add and set methods
+
+ArrayList and LinkedList don't support primitive
 */
