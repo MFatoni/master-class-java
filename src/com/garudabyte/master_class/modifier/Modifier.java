@@ -40,12 +40,29 @@ public class Modifier {
         ModifierSIBTest test = new ModifierSIBTest();
         test.someMethod();
         System.out.println("Owner is " + ModifierSIBTest.owner);
+
+//        anonymous class
+        Pen pen = new Pen() {
+            public void write() {
+                System.out.println("Montex - write");
+            }
+
+            public void price() {
+                System.out.println("Only I can decide");
+            }
+        };
+        pen.write();
     }
 
     public static int multiply(int number) {
         return number * multiplier;
     }
 
+    static class Pen {
+        public void write() {
+            System.out.println("Pen - write");
+        }
+    }
 }
 
 /*
