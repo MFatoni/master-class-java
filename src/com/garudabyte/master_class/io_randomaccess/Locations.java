@@ -12,7 +12,7 @@ import java.util.Set;
  */
 public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new LinkedHashMap<Integer, Location>();
-    private static Map<Integer, com.timbuchalka.IndexRecord> index = new LinkedHashMap<>();
+    private static Map<Integer, IndexRecord> index = new LinkedHashMap<>();
     private static RandomAccessFile ra;
 
     public static void main(String[] args) throws IOException {
@@ -42,7 +42,7 @@ public class Locations implements Map<Integer, Location> {
                 }
                 rao.writeUTF(builder.toString());
 
-                com.timbuchalka.IndexRecord record = new com.timbuchalka.IndexRecord(startPointer, (int) (rao.getFilePointer() - startPointer));
+                IndexRecord record = new IndexRecord(startPointer, (int) (rao.getFilePointer() - startPointer));
                 index.put(location.getLocationID(), record);
 
                 startPointer = (int) rao.getFilePointer();
@@ -76,7 +76,7 @@ public class Locations implements Map<Integer, Location> {
                 int locationStart = ra.readInt();
                 int locationLength = ra.readInt();
 
-                com.timbuchalka.IndexRecord record = new com.timbuchalka.IndexRecord(locationStart, locationLength);
+                IndexRecord record = new IndexRecord(locationStart, locationLength);
                 index.put(locationId, record);
             }
 
@@ -87,7 +87,7 @@ public class Locations implements Map<Integer, Location> {
 
     public Location getLocation(int locationId) throws IOException {
 
-        com.timbuchalka.IndexRecord record = index.get(locationId);
+        IndexRecord record = index.get(locationId);
         ra.seek(record.getStartByte());
         int id = ra.readInt();
         String description = ra.readUTF();
