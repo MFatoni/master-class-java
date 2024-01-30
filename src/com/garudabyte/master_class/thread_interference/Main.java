@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static com.timbuchalka.Main.EOF;
+import static com.garudabyte.master_class.thread_interference.Main.EOF;
+
 
 public class Main {
     public static final String EOF = "EOF";

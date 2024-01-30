@@ -3,7 +3,7 @@ package com.garudabyte.master_class.thread_arrayblockqueue;
 import java.util.Random;
 import java.util.concurrent.*;
 
-import static com.timbuchalka.Main.EOF;
+import static com.garudabyte.master_class.thread_arrayblockqueue.Main.EOF;
 
 public class Main {
     public static final String EOF = "EOF";
